@@ -30,7 +30,9 @@
       border-radius: var(--card-border-radius);
       backdrop-filter: blur(500px);
       padding: 10px 5px;
-      width: calc(var(--card-width) - 100px);
+      flex: 1 0 15%;
+      min-width: 140px;
+      max-width: 300px;
       aspect-ratio: 1;
       color: var(--font-color);
       font-size: cal(var(--text-font-size) + 5px);
@@ -91,25 +93,6 @@
         img {
           width: 100%;
           object-fit: cover;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .skills-container {
-    ul {
-      li.skillCard {
-        display: flex;
-        flex-direction: column;
-        width: var(--card-width);
-        &:hover {
-          scale: 1;
-        }
-
-        .card-img {
-          width: 80%;
         }
       }
     }

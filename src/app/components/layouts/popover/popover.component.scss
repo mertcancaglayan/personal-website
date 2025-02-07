@@ -9,13 +9,13 @@ app-carousel {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 90%;
   padding: 10px 0;
   gap: var(--item-gap);
   color: var(--font-color);
   font-size: var(--text-font-size);
-  height: 80%;
+  max-height: 80%;
   background: var(--background-color);
 
   .close-popover {
@@ -122,25 +122,6 @@ app-carousel {
   }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 768px) {
-  .popover {
-    .top-area {
-      .details-area {
-        justify-content: start;
-      }
-    }
-
-    .preview-area {
-      .slider-area {
-        .preview-item {
-          width: calc(var(--card-width) - 100px);
-          min-width: calc(var(--card-width) - 100px);
-        }
-      }
-    }
-  }
-}
-
 .close-btn {
   font-size: 48px;
   font-weight: bold;
@@ -161,14 +142,30 @@ app-carousel {
   }
 }
 
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .popover {
+    .top-area {
+      .details-area {
+        justify-content: start;
+      }
+    }
+
+    .preview-area {
+      .slider-area {
+        .preview-item {
+          width: calc(var(--card-width) - 100px);
+          min-width: calc(var(--card-width) - 100px);
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .popover {
-    width: 95%;
-
     .top-area {
       .details-area {
         gap: calc(var(--item-gap) - 10px);
-        font-size: calc(var(--text-font-size) - 5px);
 
         .skills-area {
           ul {
@@ -187,13 +184,28 @@ app-carousel {
             li {
               button {
                 padding: 5px 10px;
-                font-size: calc(var(--text-font-size) - 7px);
+                font-size: calc(var(--text-font-size));
                 color: var(--font-color);
                 max-width: 100px;
               }
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .popover {
+    max-height: 95%;
+    overflow: scroll;
+  }
+
+  .popover {
+    .top-area {
+      .details-area {
+        width: 90%;
       }
     }
   }

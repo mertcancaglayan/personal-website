@@ -141,12 +141,18 @@
 
 @media screen and (max-width: 768px) {
   .banner {
+    .profileAvatar {
+      img {
+        filter: drop-shadow(0px 0px 10px var(--shadow-color));
+      }
+    }
+
     .context {
-      width: 80%;
+      width: 100%;
     }
 
     .profileAvatar {
-      width: 80%;
+      width: 100%;
       border-radius: 50%;
     }
   }
