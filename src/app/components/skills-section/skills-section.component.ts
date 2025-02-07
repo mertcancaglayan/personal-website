@@ -17,7 +17,6 @@ export class SkillsSectionComponent implements OnInit {
   selectedLanguage: 'english' | 'turkish' = 'english';
   navbarLabels: NavbarElementsMap = navbarElements;
 
-
   constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {

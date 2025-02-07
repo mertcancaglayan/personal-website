@@ -9,7 +9,21 @@
   </section>
   <hr />
   <section id="projects" class="projectSection">
-    <app-projects-section [projectsData]="projectsData"></app-projects-section>
+    <ng-container *ngIf="projectsData; else noProjects">
+      <app-projects-section
+        [projectsData]="projectsData"
+      ></app-projects-section>
+    </ng-container>
+
+    <ng-template #noProjects>
+      <p>
+        {{
+          selectedLanguage === "english"
+            ? "No projects available to display."
+            : "Gösterilecek proje yok."
+        }}
+      </p>
+    </ng-template>
   </section>
   <app-scroll-top-btn></app-scroll-top-btn>
 </main>

@@ -13,9 +13,10 @@ import { Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { loadData } from './states/profile.actions';
 import { CommonModule } from '@angular/common';
-import { CustomCursorComponent } from "./components/layouts/custom-cursor/custom-cursor.component";
-import { PopoverComponent } from "./components/layouts/popover/popover.component";
-import { ScrollTopBtnComponent } from "./components/layouts/scroll-top-btn/scroll-top-btn.component";
+import { CustomCursorComponent } from './components/layouts/custom-cursor/custom-cursor.component';
+import { PopoverComponent } from './components/layouts/popover/popover.component';
+import { ScrollTopBtnComponent } from './components/layouts/scroll-top-btn/scroll-top-btn.component';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -27,25 +28,33 @@ import { ScrollTopBtnComponent } from "./components/layouts/scroll-top-btn/scrol
     ProjectsSectionComponent,
     CommonModule,
     CustomCursorComponent,
-    ScrollTopBtnComponent
-],
+    ScrollTopBtnComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
   title = 'personal-website';
+  selectedLanguage: 'english' | 'turkish' = 'english';
+
   profileData$: Observable<ProfileData>;
-  projectsData?: Projects;
+  projectsData!: Projects;
   personalInfo?: PersonalInfo;
   skills: Expertise[] = [];
   private subscription = new Subscription();
 
-  constructor(private store: Store<{ profile: ProfileData }>) {
+  constructor(
+    private store: Store<{ profile: ProfileData }>,
+    private languageService: LanguageService
+  ) {
     this.profileData$ = this.store.select((state) => state.profile);
   }
 
   ngOnInit(): void {
     this.loadProfileData();
+    this.languageService.language$.subscribe((lang) => {
+      this.selectedLanguage = lang;
+    });
   }
 
   loadProfileData(): void {
@@ -56,6 +65,7 @@ export class AppComponent implements OnInit {
           this.skills = profileData.profile[0].expertise || [];
           this.personalInfo = profileData.profile[0].personalInfo;
           this.projectsData = profileData.profile[0].projects;
+          console.log(this.projectsData);
         } else {
           console.error('No profile data available');
           this.skills = [];

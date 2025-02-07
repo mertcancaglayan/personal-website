@@ -1,4 +1,11 @@
-import { Component, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 import { Project, Projects } from '../../models/ProfileData.model';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../layouts/card/card.component';
@@ -14,8 +21,8 @@ import { LanguageService } from '../../services/language.service';
   templateUrl: './projects-section.component.html',
   styleUrls: ['./projects-section.component.scss'],
 })
-export class ProjectsSectionComponent implements OnInit {
-  @Input() projectsData?: Projects;
+export class ProjectsSectionComponent implements OnInit, AfterViewInit {
+  @Input() projectsData!: Projects;
   selectedProject?: Project;
   selectedLanguage: 'english' | 'turkish' = 'english';
   isPopoverVisible: boolean = false;
@@ -23,12 +30,11 @@ export class ProjectsSectionComponent implements OnInit {
 
   projectCategories: { key: string; label: string }[] = [];
 
+  constructor(private languageService: LanguageService) {}
 
-
-  constructor(
-    private renderer: Renderer2,
-    private languageService: LanguageService
-  ) {}
+  ngAfterViewInit(): void {
+    console.log(this.projectsData);
+  }
 
   ngOnInit(): void {
     if (this.projectsData) {
