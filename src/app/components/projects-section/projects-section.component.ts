@@ -21,7 +21,7 @@ import { LanguageService } from '../../services/language.service';
   templateUrl: './projects-section.component.html',
   styleUrls: ['./projects-section.component.scss'],
 })
-export class ProjectsSectionComponent implements OnInit, AfterViewInit {
+export class ProjectsSectionComponent implements OnInit {
   @Input() projectsData!: Projects;
   selectedProject?: Project;
   selectedLanguage: 'english' | 'turkish' = 'english';
@@ -31,10 +31,6 @@ export class ProjectsSectionComponent implements OnInit, AfterViewInit {
   projectCategories: { key: string; label: string }[] = [];
 
   constructor(private languageService: LanguageService) {}
-
-  ngAfterViewInit(): void {
-    console.log(this.projectsData);
-  }
 
   ngOnInit(): void {
     if (this.projectsData) {

@@ -65,7 +65,6 @@ export class AppComponent implements OnInit {
           this.skills = profileData.profile[0].expertise || [];
           this.personalInfo = profileData.profile[0].personalInfo;
           this.projectsData = profileData.profile[0].projects;
-          console.log(this.projectsData);
         } else {
           console.error('No profile data available');
           this.skills = [];
