@@ -14,7 +14,7 @@ import { LanguageService } from '../../services/language.service';
   templateUrl: './projects-section.component.html',
   styleUrls: ['./projects-section.component.scss'],
 })
-export class ProjectsSectionComponent implements OnInit, OnDestroy {
+export class ProjectsSectionComponent implements OnInit {
   @Input() projectsData?: Projects;
   selectedProject?: Project;
   selectedLanguage: 'english' | 'turkish' = 'english';
@@ -23,8 +23,7 @@ export class ProjectsSectionComponent implements OnInit, OnDestroy {
 
   projectCategories: { key: string; label: string }[] = [];
 
-  private wheelListener?: () => void;
-  private touchMoveListener?: () => void;
+
 
   constructor(
     private renderer: Renderer2,
@@ -38,26 +37,6 @@ export class ProjectsSectionComponent implements OnInit, OnDestroy {
     this.languageService.language$.subscribe((lang) => {
       this.selectedLanguage = lang;
     });
-  }
-
-  disableScroll() {
-    this.wheelListener = this.renderer.listen('window', 'wheel', (event) =>
-      event.preventDefault()
-    );
-    this.touchMoveListener = this.renderer.listen(
-      'window',
-      'touchmove',
-      (event) => event.preventDefault()
-    );
-  }
-
-  enableScroll() {
-    if (this.wheelListener) this.wheelListener();
-    if (this.touchMoveListener) this.touchMoveListener();
-  }
-
-  ngOnDestroy(): void {
-    this.enableScroll();
   }
 
   generateCategories(data: Projects): { key: string; label: string }[] {

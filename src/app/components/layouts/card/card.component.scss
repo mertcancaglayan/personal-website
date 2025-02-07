@@ -151,11 +151,9 @@ ul.usedExpertise {
       opacity: 1;
       h3 {
         margin: 0;
-        font-size: 10px;
       }
 
       p {
-        font-size: calc(var(--text-font-size) - 5px);
         margin: 10px 0;
         a {
           color: var(--font-color);
@@ -167,10 +165,6 @@ ul.usedExpertise {
 
   ul.usedExpertise {
     li {
-      font-size: calc(var(--text-font-size) - 5px);
-      img {
-        max-width: 18px;
-      }
       span {
         display: none;
       }
