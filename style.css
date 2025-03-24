@@ -117,3 +117,258 @@ h2 {
 	width: 24px;
 	text-align: center;
 }
+
+.tab-content {
+	padding: 1rem 3rem;
+	transform: translateY(20px);
+	position: relative;
+	margin-top: 20px;
+}
+
+.tab-content .personal-area {
+	margin-bottom: 1rem;
+}
+
+.tab-content::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background: var(--background-color);
+	z-index: -1;
+	margin-top: 1rem;
+	border-radius: 1.4rem;
+}
+
+.projects-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.project-card {
+	width: 100%;
+	max-width: 700px;
+	background: var(--nav-background);
+	border: 1px solid var(--border-color);
+	border-radius: 1rem;
+	padding: 1.5rem;
+	box-shadow: 0 4px 10px var(--shadow-color);
+	transition: transform 0.3s ease;
+}
+
+.carousel-container {
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.project-slider {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 0.8rem;
+	height: 500px;
+	position: relative;
+}
+
+.slide-image {
+	min-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+	transition: all 0.5s ease-in-out;
+}
+
+.thumbnails {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 0.8rem;
+}
+
+.thumbnail {
+	cursor: pointer;
+	border-radius: 8px;
+	overflow: hidden;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+	flex: 1;
+	aspect-ratio: 5/3;
+	filter: brightness(0.3);
+}
+
+.thumbnail.active {
+	filter: brightness(1);
+}
+
+.thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.nav-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(255, 255, 255, 0.1);
+	border: none;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+	backdrop-filter: blur(5px);
+	transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+	background: rgba(255, 255, 255, 0.2);
+	transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+	left: 1rem;
+}
+
+.next {
+	right: 1rem;
+}
+
+.skills-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.2rem;
+	list-style: none;
+}
+
+.skill-badge {
+	padding: 1rem 2rem;
+	border: none;
+	border-radius: 0.75rem;
+	font-weight: 500;
+	transition: transform 0.2s, filter 0.2s;
+	background: var(--nav-background);
+	color: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4rem;
+}
+
+.skill-badge img {
+	height: 1.5cap;
+}
+
+.contact-info {
+	margin-top: 2rem;
+}
+
+.contact-info p {
+	margin: 0.4rem 0;
+}
+
+.tab-content h3 {
+	margin-bottom: 1rem;
+}
+
+.circle {
+	content: "";
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background: #f9fafb;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.social-container {
+	display: flex;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.social-link {
+	border-radius: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	position: relative;
+	transition: transform 0.3s ease;
+	color: var(--text-color);
+	gap: 0.4rem;
+}
+
+.social-link i {
+	font-size: 1.4rem;
+	color: var(--text-color);
+	transition: color 0.3s ease;
+	background-color: var(--nav-background);
+	width: 50px;
+	height: 50px;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-link:hover {
+	transform: translateY(-3px);
+	background-color: var(--icon-hover);
+}
+
+.social-link.mail:hover i {
+	color: #1da1f2;
+}
+.social-link.instagram:hover i {
+	color: #e4405f;
+}
+.social-link.linkedin:hover i {
+	color: #0a66c2;
+}
+.social-link.github:hover i {
+	color: #6e5494;
+}
+
+@media (max-width: 480px) {
+	body {
+		padding: 1rem;
+	}
+
+	.tab-system {
+		padding: 0.4rem;
+	}
+
+	.tab-content {
+		padding: 1rem 0;
+	}
+
+	.project-card {
+		padding: 0.8rem;
+	}
+
+	.skills-list {
+		gap: 0.4rem;
+	}
+
+	.skill-badge {
+		width: fit-content;
+		padding: 0.6rem;
+	}
+
+	.tab-nav {
+		display: none;
+	}
+	.project-slider {
+		height: 300px;
+	}
+}
