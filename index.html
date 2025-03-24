@@ -3,11 +3,26 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 		<link rel="stylesheet" href="style.css" />
 		<title>Document</title>
 	</head>
 	<body>
+		<div class="tab-system">
+			<nav class="tab-nav">
+				<button class="tab-button active" data-target="about">
+					<i class="fas fa-user tab-icon"></i>About Me
+				</button>
+				<button class="tab-button" data-target="skills"><i class="fas fa-code tab-icon"></i>Skills</button>
+				<button class="tab-button" data-target="portfolio">
+					<i class="fas fa-folder-open tab-icon"></i>Projects
+				</button>
+				<button class="tab-button" data-target="contact">
+					<i class="fas fa-envelope tab-icon"></i>Contact
+				</button>
+			</nav>
+		</div>
 		<script src="script.js"></script>
 	</body>
 </html>

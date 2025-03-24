@@ -39,3 +39,81 @@ h2 {
 	width: 100%;
 	text-align: center;
 }
+
+.tab-system {
+	background: var(--card-background);
+	width: 100%;
+	max-width: 1000px;
+	border-radius: 1.4rem;
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+	min-height: 500px;
+	padding: 1rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.tab-nav {
+	background: var(--nav-background);
+	padding: 1rem 2rem;
+	gap: 1rem;
+	border-radius: 1.4rem 1.4rem 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - 4rem);
+	max-width: 1000px;
+	z-index: 100;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
+	flex: 1;
+	padding: 1rem 1.2rem;
+	border: none;
+	background: none;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 0.75rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	color: var(--text-color);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	background-color: var(--button-bg);
+	min-width: fit-content;
+	max-width: max-content;
+}
+
+.tab-button:hover {
+	background: var(--button-hover);
+	transform: translateX(5px);
+}
+
+.tab-button.active {
+	background-color: #e2e8f0;
+	color: var(--active-color);
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button.active::before {
+	content: "";
+	position: absolute;
+	width: 0.6rem;
+	height: 100%;
+	background: var(--active-color);
+	border-radius: 0.75rem 0 0 0.75rem;
+	top: 0;
+	left: 0;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-icon {
+	width: 24px;
+	text-align: center;
+}
