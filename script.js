@@ -59,3 +59,39 @@ body.addEventListener("mousemove", (e) => {
 		setTimeout(() => (isThrottled = false), 16);
 	}
 });
+
+const tabs = document.querySelectorAll(".tab-button");
+const contents = document.querySelectorAll(".tab-content");
+
+tabs.forEach((tab) => {
+	tab.addEventListener("click", function () {
+		const targetContent = document.getElementById(this.dataset.target);
+
+		console.log(targetContent);
+
+		tabs.forEach((tab) => tab.classList.remove("active"));
+		this.classList.add("active");
+
+		const offset = 80;
+		const targetPosition = targetContent.getBoundingClientRect().top + window.scrollY - offset;
+
+		window.scrollTo({
+			top: targetPosition,
+			behavior: "smooth",
+		});
+	});
+});
+
+document.addEventListener("keydown", (e) => {
+	const activeTab = document.querySelector(".tab-button.active");
+	const tabsArray = Array.from(tabs);
+	const currentIndex = tabsArray.indexOf(activeTab);
+
+	if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+		const nextTab = tabsArray[(currentIndex + 1) % tabsArray.length];
+		nextTab.click();
+	} else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+		const prevTab = tabsArray[(currentIndex - 1 + tabsArray.length) % tabsArray.length];
+		prevTab.click();
+	}
+});
