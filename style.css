@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Kode Mono", monospace;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+:root {
+	--background-color: #1a1a1a;
+	--text-color: #e2e8f0;
+	--card-background: #2d2d2d;
+	--nav-background: #333;
+	--border-color: #404040;
+	--button-hover: #404040;
+	--active-color: #9f7aea;
+	--badge-bg: #6b46c1;
+	--shadow-color: rgba(0, 0, 0, 0.3);
+	--button-bg: #404040;
+}
+
+body {
+	background: rgb(36, 41, 51);
+	background: radial-gradient(circle, rgb(42, 43, 46) 0%, rgba(27, 27, 27, 1) 100%);
+	color: var(--text-color);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 2rem;
+	gap: 1.2rem;
+}
+
+h1,
+h2 {
+	width: 100%;
+	text-align: center;
+}
