@@ -51,21 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 });
 
-const body = document.body;
+const cursor = document.querySelector(".blob");
 
-const updateGradient = (e) => {
-	const x = (e.clientX / window.innerWidth) * 100;
-	const y = (e.clientY / window.innerHeight) * 100;
-	body.style.background = `radial-gradient(circle at ${x}% ${y}%, rgb(42, 43, 46) 0%, rgba(27, 27, 27, 1) 100%)`;
-};
-
-let isThrottled = false;
-body.addEventListener("mousemove", (e) => {
-	if (!isThrottled) {
-		updateGradient(e);
-		isThrottled = true;
-		setTimeout(() => (isThrottled = false), 16);
-	}
+document.addEventListener("mousemove", function (e) {
+	const x = e.clientX;
+	const y = e.clientY;
+	cursor.style.transform = `translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0)`;
 });
 
 const tabs = document.querySelectorAll(".tab-button");
