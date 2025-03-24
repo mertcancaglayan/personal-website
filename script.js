@@ -42,3 +42,20 @@ sliders.forEach((slider) => {
 		slideTo(currentSlide + 1);
 	});
 });
+
+const body = document.body;
+
+const updateGradient = (e) => {
+	const x = (e.clientX / window.innerWidth) * 100;
+	const y = (e.clientY / window.innerHeight) * 100;
+	body.style.background = `radial-gradient(circle at ${x}% ${y}%, rgb(42, 43, 46) 0%, rgba(27, 27, 27, 1) 100%)`;
+};
+
+let isThrottled = false;
+body.addEventListener("mousemove", (e) => {
+	if (!isThrottled) {
+		updateGradient(e);
+		isThrottled = true;
+		setTimeout(() => (isThrottled = false), 16);
+	}
+});
