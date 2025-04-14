@@ -3,27 +3,50 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Kode Mono", monospace;
+	font-family: var(--font-family-main);
 	font-optical-sizing: auto;
 	font-style: normal;
 }
 
 :root {
+	--font-family-main: "Kode Mono", monospace;
 	--background-color: #1a1a1a;
 	--text-color: #e2e8f0;
+
 	--card-background: #2d2d2d;
 	--nav-background: #333;
+
 	--border-color: #404040;
+	--button-bg: #404040;
 	--button-hover: #404040;
+
 	--active-color: #9f7aea;
 	--badge-bg: #6b46c1;
+
 	--shadow-color: rgba(0, 0, 0, 0.3);
-	--button-bg: #404040;
+}
+
+body[data-theme="ghibli"] {
+	--font-family-main: "Coming Soon", cursive;
+	--background-color: #f0ebe3;
+	--text-color: #4b3f35;
+
+	--card-background: #fff9f0;
+	--nav-background: #e8dcca;
+
+	--border-color: #d5c6b0;
+	--button-bg: #d2e3c8;
+	--button-hover: #bcd4ac;
+
+	--active-color: #8a5129;
+	--badge-bg: #deb986;
+
+	--shadow-color: rgba(219, 21, 21, 0.678);
 }
 
 body {
-	background: rgb(36, 41, 51);
-	background: radial-gradient(circle, rgb(42, 43, 46) 0%, rgba(27, 27, 27, 1) 100%);
+	background: var(--background-color);
+	background: radial-gradient(circle, rgb(42, 43, 46) 0%, var(--background-color) 100%);
 	color: var(--text-color);
 	min-height: 100vh;
 	display: flex;
@@ -71,6 +94,15 @@ h2 {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+#theme-switcher {
+	padding: 0.4rem 0.6rem;
+	background-color: var(--button-bg);
+	color: var(--text-color);
+	border: 1px solid var(--border-color);
+	border-radius: 0.375rem;
+	font-family: var(--font-family-main);
+}
+
 .tab-button {
 	flex: 1;
 	padding: 1rem 1.2rem;
@@ -96,7 +128,6 @@ h2 {
 }
 
 .tab-button.active {
-	background-color: #e2e8f0;
 	color: var(--active-color);
 	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -287,6 +318,26 @@ h2 {
 	align-items: center;
 	justify-content: center;
 	gap: 0.4rem;
+}
+
+body[data-theme="ghibli"] .skill-badge,
+body[data-theme="ghibli"] .social-link,
+body[data-theme="ghibli"] .project-card,
+body[data-theme="ghibli"] .tab-button,
+body[data-theme="ghibli"] .custom-options,
+body[data-theme="ghibli"] #theme-switcher,
+body[data-theme="ghibli"] .tab-nav {
+	box-shadow: 1px 1px 0px 1px var(--active-color);
+	-webkit-box-shadow: 1px 1px 0px 1px var(--active-color);
+	-moz-box-shadow: 1px 1px 0px 1px var(--active-color);
+	transition: all 0.3s ease;
+}
+
+body[data-theme="ghibli"] .skill-badge:hover,
+body[data-theme="ghibli"] .social-link:hover {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
 }
 
 .skill-badge img {

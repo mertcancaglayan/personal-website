@@ -92,3 +92,37 @@ document.addEventListener("keydown", (e) => {
 		prevTab.click();
 	}
 });
+
+const themeSwitcher = document.getElementById("theme-switcher");
+
+function getTheme() {
+	const savedTheme = localStorage.getItem("mccTheme") || "dark";
+	switchTheme(savedTheme);
+}
+
+themeSwitcher.addEventListener("change", (e) => {
+	const theme = e.target.value;
+	switchTheme(theme);
+});
+
+function switchTheme(theme) {
+	document.body.setAttribute("data-theme", theme);
+	localStorage.setItem("mccTheme", theme);
+	themeSwitcher.value = theme;
+}
+
+getTheme();
+
+window.onscroll = function () {
+	scrollFunction();
+};
+
+function scrollFunction() {
+	const nav = document.querySelector(".tab-nav");
+
+	if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+		nav.style.borderRadius = 0;
+	} else {
+		nav.style.borderRadius = " 1.4rem 1.4rem 0 0";
+	}
+}
