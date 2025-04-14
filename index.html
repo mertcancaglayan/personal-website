@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+		<link rel="stylesheet" href="themes.css" />
 		<link rel="stylesheet" href="style.css" />
 		<title>Mert Can Caglayan</title>
 	</head>
@@ -22,11 +23,36 @@
 					<i class="fas fa-folder-open tab-icon"></i>Projects
 				</button>
 
-				<label for="theme-switcher">Theme:</label>
-				<select id="theme-switcher">
-					<option selected value="dark">Dark</option>
-					<option value="ghibli">Ghibli</option>
-				</select>
+				<div id="theme-switcher-container">
+					<label for="theme-switcher">Theme:</label>
+					<select id="theme-switcher">
+						<!-- Core Themes -->
+						<optgroup label="Core Themes">
+							<option selected value="dark">Dark</option>
+							<option value="ghibli">Ghibli</option>
+							<option value="cyberpunk">Cyberpunk</option>
+						</optgroup>
+
+						<!-- Professional -->
+						<optgroup label="Professional">
+							<option value="solarized-dark">Solarized Dark</option>
+							<option value="nord">Nord</option>
+							<option value="material-you">Material You</option>
+						</optgroup>
+
+						<!-- Aesthetic -->
+						<optgroup label="Aesthetic">
+							<option value="retro-crt">Retro CRT</option>
+							<option value="midnight-purple">Midnight Purple</option>
+							<option value="amoled">AMOLED Black</option>
+						</optgroup>
+
+						<!-- Nature -->
+						<optgroup label="Nature">
+							<option value="nature-moss">Nature Moss</option>
+						</optgroup>
+					</select>
+				</div>
 			</nav>
 			<div class="tabs-content">
 				<div id="about" class="tab-content">
