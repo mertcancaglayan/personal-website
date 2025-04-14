@@ -57,6 +57,42 @@ h2 {
 	overflow: hidden;
 }
 
+.mobile-menu-button {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+	display: none;
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: #f0f0f0;
+}
+
+.hamburger .bar {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background: #f0f0f0;
+	margin: 5px auto;
+	transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(1) {
+	transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+	transform: translateY(-8px) rotate(-45deg);
+}
+
 .tab-nav {
 	background: var(--nav-background);
 	padding: 1rem 2rem;
@@ -65,7 +101,6 @@ h2 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-wrap: wrap;
 	position: fixed;
 	top: 0;
 	left: 50%;
@@ -76,7 +111,19 @@ h2 {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.tab-buttons {
+	display: flex;
+	gap: 1rem;
+}
+
+#theme-switcher-container {
+	display: flex;
+	align-items: center;
+}
+
 #theme-switcher {
+	min-width: 100px;
+	max-width: 250px;
 	padding: 0.4rem 0.6rem;
 	background-color: var(--button-bg);
 	color: var(--text-color);
@@ -402,6 +449,38 @@ body[data-theme="ghibli"] .social-link:hover {
 	color: #6e5494;
 }
 
+@media screen and (max-width: 1024px) {
+	.tab-nav {
+		justify-content: space-between;
+	}
+
+	.hamburger {
+		display: block;
+	}
+
+	.tab-buttons {
+		display: none;
+		flex-direction: column;
+		position: fixed;
+		top: 4rem;
+		left: 0;
+		width: 100%;
+		background: var(--nav-background);
+		padding: 20px 0;
+	}
+
+	.tab-buttons.active {
+		display: flex;
+		align-items: center;
+	}
+
+	.tab-button {
+		text-align: center;
+		width: 250px;
+		min-width: 200px;
+	}
+}
+
 @media (max-width: 480px) {
 	body {
 		padding: 1rem;
@@ -409,6 +488,19 @@ body[data-theme="ghibli"] .social-link:hover {
 
 	.tab-system {
 		padding: 0.4rem;
+	}
+
+	.tab-nav {
+		width: calc(100% - 2rem);
+		flex-direction: row-reverse;
+	}
+
+	#theme-switcher-container {
+		flex-wrap: wrap;
+	}
+
+	#theme-switcher {
+		max-width: 120px;
 	}
 
 	.tab-content {
@@ -428,9 +520,6 @@ body[data-theme="ghibli"] .social-link:hover {
 		padding: 0.6rem;
 	}
 
-	.tab-nav {
-		display: none;
-	}
 	.project-slider {
 		height: 300px;
 	}

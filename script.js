@@ -126,3 +126,19 @@ function scrollFunction() {
 		nav.style.borderRadius = " 1.4rem 1.4rem 0 0";
 	}
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+	const hamburger = document.querySelector(".hamburger");
+	const navLinks = document.querySelector(".tab-buttons");
+
+	hamburger.addEventListener("click", function () {
+		this.classList.toggle("active");
+		navLinks.classList.toggle("active");
+	});
+
+	// Animation for links sliding in
+	const links = document.querySelectorAll(".tab-buttons .tab-button");
+	links.forEach((link, index) => {
+		link.style.transitionDelay = `${index * 0.1}s`;
+	});
+});
