@@ -1,0 +1,137 @@
+body[data-theme="dark"] {
+	--font-family-main: "Kode Mono", monospace;
+	--background-color: #1a1a1a;
+	--text-color: #e2e8f0;
+
+	--card-background: #2d2d2d;
+	--nav-background: #333;
+
+	--border-color: #404040;
+	--button-bg: #404040;
+	--button-hover: #404040;
+
+	--active-color: #9f7aea;
+	--badge-bg: #6b46c1;
+
+	--shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="ghibli"] {
+	--font-family-main: "Coming Soon", cursive;
+	--background-color: #f0ebe3;
+	--text-color: #4b3f35;
+
+	--card-background: #fff9f0;
+	--nav-background: #e8dcca;
+
+	--border-color: #d5c6b0;
+	--button-bg: #d2e3c8;
+	--button-hover: #bcd4ac;
+
+	--active-color: #8a5129;
+	--badge-bg: #deb986;
+
+	--shadow-color: rgba(219, 21, 21, 0.678);
+}
+
+body[data-theme="cyberpunk"] {
+	--font-family-main: "Courier New", monospace;
+	--background-color: #0a0a2e;
+	--text-color: #00f7ff;
+
+	--card-background: #1a1a4a;
+	--nav-background: #25255e;
+
+	--border-color: #ff00ff;
+	--button-bg: #ff00ff;
+	--button-hover: #ff66ff;
+
+	--active-color: #00f7ff;
+	--badge-bg: #ff00ff;
+
+	--shadow-color: rgba(255, 0, 255, 0.3);
+}
+
+body[data-theme="retro-crt"] {
+	--font-family-main: "VT323", monospace;
+	--background-color: #1a1f16;
+	--text-color: #00ff00;
+	--card-background: #000;
+	--nav-background: #0f0f0f;
+	--border-color: #00ff00;
+	--button-bg: #333;
+	--button-hover: #444;
+	--active-color: #ff9900;
+	--badge-bg: #ff9900;
+	--shadow-color: rgba(0, 255, 0, 0.2);
+}
+
+body[data-theme="nord"] {
+	--font-family-main: "Inter", sans-serif;
+	--background-color: #2e3440;
+	--text-color: #d8dee9;
+	--card-background: #3b4252;
+	--nav-background: #434c5e;
+	--border-color: #4c566a;
+	--button-bg: #5e81ac;
+	--button-hover: #81a1c1;
+	--active-color: #88c0d0;
+	--badge-bg: #bf616a;
+	--shadow-color: rgba(46, 52, 64, 0.3);
+}
+
+body[data-theme="material-you"] {
+	--font-family-main: "Roboto Flex", sans-serif;
+	--background-color: hsl(215, 100%, 97%);
+	--text-color: hsl(215, 30%, 25%);
+	--card-background: hsl(0, 0%, 100%);
+	--nav-background: hsl(215, 80%, 94%);
+	--border-color: hsl(215, 20%, 80%);
+	--button-bg: hsl(215, 80%, 55%);
+	--button-hover: hsl(215, 80%, 65%);
+	--active-color: hsl(350, 75%, 55%);
+	--badge-bg: hsl(45, 90%, 55%);
+	--shadow-color: hsla(215, 60%, 20%, 0.1);
+}
+
+body[data-theme="midnight-purple"] {
+	--font-family-main: "Space Grotesk", sans-serif;
+	--background-color: #1a0526;
+	--text-color: #e0d4f7;
+	--card-background: #2d0a40;
+	--nav-background: #3d1254;
+	--border-color: #6a1b9a;
+	--button-bg: #9c27b0;
+	--button-hover: #ba68c8;
+	--active-color: #ffd700;
+	--badge-bg: #4a148c;
+	--shadow-color: rgba(106, 27, 154, 0.3);
+}
+
+body[data-theme="amoled"] {
+	--font-family-main: system-ui, sans-serif;
+	--background-color: #000000;
+	--text-color: #ffffff;
+	--card-background: #111111;
+	--nav-background: #1a1a1a;
+	--border-color: #333333;
+	--button-bg: #222222;
+	--button-hover: #333333;
+	--active-color: #ff4444;
+	--badge-bg: #00ff00;
+	--shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="nature-moss"] {
+	--font-family-main: "Quicksand", sans-serif;
+	--background-color: #f4f9f4;
+	--text-color: #2c3e3f;
+	--card-background: #e0ebe0;
+	--nav-background: #c8d6c8;
+	--border-color: #a3c2a3;
+	--button-bg: #5d9c5d;
+	--button-hover: #7eb07e;
+	--active-color: #3d663d;
+	--badge-bg: #a37c4b;
+	--shadow-color: rgba(93, 156, 93, 0.2);
+}

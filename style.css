@@ -26,24 +26,6 @@
 	--shadow-color: rgba(0, 0, 0, 0.3);
 }
 
-body[data-theme="ghibli"] {
-	--font-family-main: "Coming Soon", cursive;
-	--background-color: #f0ebe3;
-	--text-color: #4b3f35;
-
-	--card-background: #fff9f0;
-	--nav-background: #e8dcca;
-
-	--border-color: #d5c6b0;
-	--button-bg: #d2e3c8;
-	--button-hover: #bcd4ac;
-
-	--active-color: #8a5129;
-	--badge-bg: #deb986;
-
-	--shadow-color: rgba(219, 21, 21, 0.678);
-}
-
 body {
 	background: var(--background-color);
 	background: radial-gradient(circle, rgb(42, 43, 46) 0%, var(--background-color) 100%);
