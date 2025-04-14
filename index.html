@@ -12,19 +12,30 @@
 	<body data-theme="dark">
 		<div class="tab-system">
 			<nav class="tab-nav">
-				<button class="tab-button active" data-target="about">
-					<i class="fas fa-user tab-icon"></i>About Me
-				</button>
-				<button class="tab-button" data-target="contact">
-					<i class="fas fa-envelope tab-icon"></i>Contact
-				</button>
-				<button class="tab-button" data-target="skills"><i class="fas fa-code tab-icon"></i>Skills</button>
-				<button class="tab-button" data-target="portfolio">
-					<i class="fas fa-folder-open tab-icon"></i>Projects
-				</button>
+				
+				<div class="mobile-menu-button">
+					<span>Menu: </span>
+					<button id="hamburger" class="hamburger" aria-label="Toggle menu">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</button>
+				</div>
 
+				<div class="tab-buttons">
+					<button class="tab-button active" data-target="about">
+						<i class="fas fa-user tab-icon"></i>About Me
+					</button>
+					<button class="tab-button" data-target="contact">
+						<i class="fas fa-envelope tab-icon"></i>Contact
+					</button>
+					<button class="tab-button" data-target="skills"><i class="fas fa-code tab-icon"></i>Skills</button>
+					<button class="tab-button" data-target="portfolio">
+						<i class="fas fa-folder-open tab-icon"></i>Projects
+					</button>
+				</div>
 				<div id="theme-switcher-container">
-					<label for="theme-switcher">Theme:</label>
+					<label for="theme-switcher">Theme: </label>
 					<select id="theme-switcher">
 						<!-- Core Themes -->
 						<optgroup label="Core Themes">
@@ -54,6 +65,7 @@
 					</select>
 				</div>
 			</nav>
+
 			<div class="tabs-content">
 				<div id="about" class="tab-content">
 					<div class="personal-area">
