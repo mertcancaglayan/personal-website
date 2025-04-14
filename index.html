@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="style.css" />
 		<title>Mert Can Caglayan</title>
 	</head>
-	<body>
+	<body data-theme="dark">
 		<div class="tab-system">
 			<nav class="tab-nav">
 				<button class="tab-button active" data-target="about">
@@ -21,6 +21,12 @@
 				<button class="tab-button" data-target="portfolio">
 					<i class="fas fa-folder-open tab-icon"></i>Projects
 				</button>
+
+				<label for="theme-switcher">Theme:</label>
+				<select id="theme-switcher">
+					<option selected value="dark">Dark</option>
+					<option value="ghibli">Ghibli</option>
+				</select>
 			</nav>
 			<div class="tabs-content">
 				<div id="about" class="tab-content">
